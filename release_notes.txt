@@ -1,0 +1,88 @@
+RELEASE NOTES - Version 1.0
+============================
+
+Release Date: December 2025
+Release Type: Major Release
+Branch: release/v1.0
+
+OVERVIEW
+--------
+This is the initial production release of our application, featuring core
+navigation, sidebar, and dashboard functionality. This release establishes
+the foundation for our user interface and provides essential tools for
+user interaction and data visualization.
+
+NEW FEATURES
+------------
+
+1. Navigation Feature (feature/navigation)
+   - Implemented responsive top navigation bar
+   - Added main menu with Home, Dashboard, Profile, and Settings
+   - Mobile-responsive hamburger menu
+   - Search functionality integration
+   - User profile dropdown menu
+   - Sticky navigation with smooth scrolling
+   - Accessibility features (ARIA labels, keyboard navigation)
+
+2. Sidebar Feature (feature/sidebar)
+   - Collapsible sidebar panel with toggle functionality
+   - Quick links and shortcuts section
+   - Recent activities widget
+   - Notifications panel
+   - User bookmarks management
+   - Dark/Light theme support
+   - Remembers user preference (expanded/collapsed state)
+   - Keyboard shortcut support (Ctrl+B to toggle)
+
+3. Dashboard Feature (feature/dashboard)
+   - Comprehensive analytics dashboard
+   - Key Performance Indicator (KPI) cards
+   - Interactive charts and graphs (Chart.js integration)
+   - Real-time data updates using WebSocket
+   - Activity timeline and feed
+   - Customizable widget layout with drag-and-drop
+   - Export functionality (PDF, CSV)
+   - Mobile-optimized responsive design
+
+TECHNICAL IMPROVEMENTS
+----------------------
+- Established Git Flow workflow for development
+- Implemented feature branch strategy
+- Set up develop and master branch architecture
+- Added comprehensive testing protocols
+
+KNOWN ISSUES
+------------
+None reported at this time.
+
+UPGRADE NOTES
+-------------
+This is the initial release. No upgrade path required.
+
+DEPENDENCIES
+------------
+- Chart.js library for data visualization
+- WebSocket for real-time updates
+- Modern browser support (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+
+DEPLOYMENT INSTRUCTIONS
+-----------------------
+1. Merge release/v1.0 into master branch
+2. Tag master with v1.0
+3. Deploy from master branch to production
+4. Merge release/v1.0 back into develop branch
+
+CONTRIBUTORS
+------------
+DevOps Team - Intellipaat Git Assignment 5
+
+NEXT RELEASE
+------------
+Planned features for v1.1:
+- User authentication system
+- Advanced reporting module
+- API integration framework
+
+---
+For questions or issues, contact: support@intellipaat.com
+Git Repository: github.com/gp97-dot/git_assignment_5
