@@ -1,0 +1,92 @@
+HOTFIX - URGENT PRODUCTION ISSUE
+==================================
+
+Hotfix ID: HF-2025-001
+Severity: CRITICAL
+Branch: hotfix/urgent
+Date: December 9, 2025
+
+ISSUE DESCRIPTION
+-----------------
+Critical authentication vulnerability discovered in production environment.
+Users were experiencing intermittent logout issues causing session data loss
+and preventing access to dashboard features.
+
+IMPACT
+------
+- Affected: 15% of active users
+- Duration: Detected 2 hours ago
+- Severity: HIGH - User experience significantly impacted
+- Business Impact: Users unable to access core dashboard functionality
+
+ROOT CAUSE
+----------
+Session timeout configuration was incorrectly set during the v1.0 release,
+causing premature session expiration. The navigation component was not
+properly handling session refresh tokens.
+
+RESOLUTION
+----------
+1. Fixed session timeout configuration (extended from 5min to 30min)
+2. Updated navigation component to handle session refresh properly
+3. Added session persistence validation
+4. Implemented proper error handling for authentication failures
+
+TECHNICAL CHANGES
+-----------------
+- Modified: authentication/session.config
+- Updated: navigation/auth-handler.js
+- Added: session validation middleware
+- Patched: token refresh mechanism
+
+TESTING PERFORMED
+-----------------
+- Unit tests: PASSED
+- Integration tests: PASSED
+- Manual testing in staging: PASSED
+- User session persistence verified
+- Cross-browser compatibility confirmed
+
+DEPLOYMENT STEPS
+----------------
+1. Merge hotfix/urgent into master
+2. Tag master as v1.0.1
+3. Deploy to production immediately
+4. Monitor user sessions for 2 hours post-deployment
+5. Merge hotfix/urgent back into develop
+
+VERIFICATION
+------------
+- Session timeout now working correctly (30 minutes)
+- Users can access dashboard without unexpected logouts
+- Authentication flow operates smoothly
+- No data loss during session management
+
+ROLLBACK PLAN
+-------------
+If issues persist after deployment:
+- Revert to v1.0 tagged commit
+- Estimated rollback time: 5 minutes
+
+POST-DEPLOYMENT MONITORING
+--------------------------
+- Monitor error logs for authentication failures
+- Track user session duration metrics
+- Watch for logout-related support tickets
+- Review system performance metrics
+
+NOTIFICATION
+------------
+- Development team: NOTIFIED
+- QA team: NOTIFIED  
+- Product management: NOTIFIED
+- Customer support: NOTIFIED
+- Users: Maintenance notification sent
+
+Next Version: v1.0.1
+Previous Version: v1.0
+
+---
+Prepared by: DevOps Team
+Approved by: Technical Lead
+Status: READY FOR DEPLOYMENT
